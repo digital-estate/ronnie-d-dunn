@@ -1,34 +1,187 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Premium Gospel Artist Website - Ronnie D Dunn */
+
+/* Color Palette */
+:root {
+  --color-gold: #d4af37;
+  --color-gold-light: #f4d186;
+  --color-gold-dark: #b8941f;
+  --color-black: #000000;
+  --color-neutral-warm: #1a1614;
+  --color-neutral-900: #1c1917;
+  --color-neutral-800: #292524;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Remove default App centering */
+.App {
+  text-align: left;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+/* Typography */
+body {
+  font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
-.App-link {
-    color: #61dafb;
+/* Hero Section Styles */
+.hero-section {
+  position: relative;
+  background: var(--color-black);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.logo-container {
+  position: relative;
+  animation: fadeInScale 1s ease-out forwards;
+}
+
+.logo-glow {
+  filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.4));
+  animation: gentleGlow 3s ease-in-out infinite;
+}
+
+@keyframes gentleGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 50px rgba(212, 175, 55, 0.6));
+  }
+}
+
+.light-sweep {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: lightSweep 4s ease-in-out infinite;
+}
+
+@keyframes lightSweep {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Section Styles */
+.section-heading {
+  letter-spacing: -0.02em;
+  font-weight: 300;
+}
+
+.bg-neutral-warm {
+  background-color: var(--color-neutral-warm);
+}
+
+/* Gold Color Classes */
+.text-gold {
+  color: var(--color-gold);
+}
+
+.text-gold-light {
+  color: var(--color-gold-light);
+}
+
+.bg-gold {
+  background-color: var(--color-gold);
+}
+
+.bg-gold-dark {
+  background-color: var(--color-gold-dark);
+}
+
+.border-gold {
+  border-color: var(--color-gold);
+}
+
+/* Bio Text Animation */
+.bio-text p {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Album Artwork */
+.album-artwork {
+  transition: transform 0.3s ease;
+}
+
+.album-artwork:hover {
+  transform: scale(1.02);
+}
+
+/* Mission Cards */
+.mission-card {
+  background: linear-gradient(135deg, var(--color-neutral-900) 0%, var(--color-neutral-800) 100%);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* CTA Buttons */
+.cta-button {
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  box-shadow: 0 4px 14px 0 rgba(212, 175, 55, 0.25);
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  box-shadow: 0 6px 20px 0 rgba(212, 175, 55, 0.4);
+}
+
+/* Video Container */
+.video-container {
+  background: var(--color-neutral-900);
+}
+
+/* Social Icons */
+.social-icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-tagline {
+    font-size: 1.125rem;
+  }
+  
+  .section-heading {
+    font-size: 2rem;
+  }
 }
